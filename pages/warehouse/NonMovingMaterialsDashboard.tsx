@@ -92,16 +92,16 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
         <div>
           <h1 className="text-3xl font-bold text-white glow-text flex items-center gap-3">
             <AlertTriangle className="text-amber-400" />
-            المواد الراكدة | Non-Moving Materials
+            Non-Moving Materials
           </h1>
           <p className="text-sm text-gray-400 mt-1">
-            مواد لم تتحرك منذ فترة طويلة وتحتاج مراجعة
+            Materials that haven't moved for an extended period and need review
           </p>
         </div>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-lg text-gray-300 hover:bg-white/10 text-sm transition-all">
             <Download size={16} />
-            <span>تصدير | Export</span>
+            <span>Export</span>
           </button>
         </div>
       </div>
@@ -115,7 +115,7 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-amber-400">{stats.totalItems}</p>
-              <p className="text-xs text-gray-400">إجمالي الأصناف الراكدة</p>
+              <p className="text-xs text-gray-400">Total Non-Moving Items</p>
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{stats.totalQty.toLocaleString()}</p>
-              <p className="text-xs text-gray-400">إجمالي الكميات</p>
+              <p className="text-xs text-gray-400">Total Quantity</p>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
       <div className="glass-card rounded-xl p-4 border border-white/10">
         <h3 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
           <BarChart3 size={16} className="text-nesma-secondary" />
-          تصنيف المواد الراكدة | Category Breakdown
+          Category Breakdown
         </h3>
         <div className="flex flex-wrap gap-3">
           {Object.entries(stats.byProject).map(([project, qty]) => (
@@ -170,7 +170,7 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
               <Search size={18} className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400" />
               <input
                 type="text"
-                placeholder="بحث بالوصف... | Search description..."
+                placeholder="Search description..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-black/20 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-nesma-secondary/50"
@@ -184,7 +184,7 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
                 onChange={(e) => setFilterWarehouse(e.target.value)}
                 className="bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-gray-300 focus:outline-none focus:border-nesma-secondary/50"
               >
-                <option value="">كل المستودعات | All Warehouses</option>
+                <option value="">All Warehouses</option>
                 {warehouses.map(w => <option key={w} value={w}>{w}</option>)}
               </select>
 
@@ -193,7 +193,7 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
                 onChange={(e) => setFilterProject(e.target.value)}
                 className="bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-gray-300 focus:outline-none focus:border-nesma-secondary/50"
               >
-                <option value="">كل التصنيفات | All Categories</option>
+                <option value="">All Categories</option>
                 {projects.map(p => <option key={p} value={p}>{p}</option>)}
               </select>
 
@@ -203,13 +203,13 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
                   onClick={() => setViewMode('table')}
                   className={`px-3 py-2 text-sm ${viewMode === 'table' ? 'bg-nesma-primary text-white' : 'text-gray-400 hover:bg-white/5'}`}
                 >
-                  جدول
+                  Table
                 </button>
                 <button
                   onClick={() => setViewMode('cards')}
                   className={`px-3 py-2 text-sm ${viewMode === 'cards' ? 'bg-nesma-primary text-white' : 'text-gray-400 hover:bg-white/5'}`}
                 >
-                  بطاقات
+                  Cards
                 </button>
               </div>
             </div>
@@ -223,13 +223,13 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
               <thead className="nesma-table-head text-nesma-secondary text-xs uppercase tracking-wider">
                 <tr>
                   <th className="px-4 py-4">#</th>
-                  <th className="px-4 py-4">المستودع | Warehouse</th>
-                  <th className="px-4 py-4">الوصف | Description</th>
-                  <th className="px-4 py-4">الوحدة | Unit</th>
-                  <th className="px-4 py-4">الموقع | Location</th>
-                  <th className="px-4 py-4">الكمية | Qty</th>
-                  <th className="px-4 py-4">التصنيف | Category</th>
-                  <th className="px-4 py-4">ملاحظات | Remarks</th>
+                  <th className="px-4 py-4">Warehouse</th>
+                  <th className="px-4 py-4">Description</th>
+                  <th className="px-4 py-4">Unit</th>
+                  <th className="px-4 py-4">Location</th>
+                  <th className="px-4 py-4">Qty</th>
+                  <th className="px-4 py-4">Category</th>
+                  <th className="px-4 py-4">Remarks</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5 text-sm text-gray-300">
@@ -289,8 +289,8 @@ export const NonMovingMaterialsDashboard: React.FC = () => {
 
         {/* Footer */}
         <div className="p-4 border-t border-white/10 bg-white/5 flex justify-between items-center text-xs text-gray-400">
-          <span>عرض {filteredData.length} من {NON_MOVING_DATA.length} صنف راكد</span>
-          <span>تقرير المواد الراكدة | Non-Moving Materials Report</span>
+          <span>Showing {filteredData.length} of {NON_MOVING_DATA.length} non-moving items</span>
+          <span>Non-Moving Materials Report</span>
         </div>
       </div>
     </div>

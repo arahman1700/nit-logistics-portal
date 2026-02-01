@@ -81,16 +81,16 @@ export const InventoryDashboard: React.FC = () => {
         <div>
           <h1 className="text-3xl font-bold text-white glow-text flex items-center gap-3">
             <Package className="text-nesma-secondary" />
-            المخزون | Inventory Levels
+            Inventory Levels
           </h1>
           <p className="text-sm text-gray-400 mt-1">
-            مستويات المخزون الفعلية - مستودع الدمام
+            Real-time inventory levels - Dammam Warehouse
           </p>
         </div>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-lg text-gray-300 hover:bg-white/10 text-sm transition-all">
             <Download size={16} />
-            <span>تصدير | Export</span>
+            <span>Export</span>
           </button>
         </div>
       </div>
@@ -104,7 +104,7 @@ export const InventoryDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{stats.totalItems}</p>
-              <p className="text-xs text-gray-400">إجمالي الأصناف</p>
+              <p className="text-xs text-gray-400">Total Items</p>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ export const InventoryDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{stats.totalBalance.toLocaleString()}</p>
-              <p className="text-xs text-gray-400">إجمالي الرصيد (متر)</p>
+              <p className="text-xs text-gray-400">Total Balance (Mt)</p>
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@ export const InventoryDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-emerald-400">{stats.inStock}</p>
-              <p className="text-xs text-gray-400">متوفر | In Stock</p>
+              <p className="text-xs text-gray-400">In Stock</p>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ export const InventoryDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-amber-400">{stats.lowStock}</p>
-              <p className="text-xs text-gray-400">منخفض | Low Stock</p>
+              <p className="text-xs text-gray-400">Low Stock</p>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@ export const InventoryDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-red-400">{stats.outOfStock}</p>
-              <p className="text-xs text-gray-400">نفذ | Out of Stock</p>
+              <p className="text-xs text-gray-400">Out of Stock</p>
             </div>
           </div>
         </div>
@@ -163,7 +163,7 @@ export const InventoryDashboard: React.FC = () => {
               <Search size={18} className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400" />
               <input
                 type="text"
-                placeholder="بحث بالكود أو الوصف أو المقاس... | Search code, description, size..."
+                placeholder="Search code, description, size..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-black/20 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-nesma-secondary/50"
@@ -177,7 +177,7 @@ export const InventoryDashboard: React.FC = () => {
                 onChange={(e) => setFilterProject(e.target.value)}
                 className="bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-gray-300 focus:outline-none focus:border-nesma-secondary/50"
               >
-                <option value="">كل المشاريع | All Projects</option>
+                <option value="">All Projects</option>
                 {projects.map(p => <option key={p} value={p}>{p}</option>)}
               </select>
 
@@ -186,7 +186,7 @@ export const InventoryDashboard: React.FC = () => {
                 onChange={(e) => setFilterLocation(e.target.value)}
                 className="bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-gray-300 focus:outline-none focus:border-nesma-secondary/50"
               >
-                <option value="">كل المواقع | All Locations</option>
+                <option value="">All Locations</option>
                 {locations.map(l => <option key={l} value={l}>{l}</option>)}
               </select>
 
@@ -196,13 +196,13 @@ export const InventoryDashboard: React.FC = () => {
                   onClick={() => setViewMode('table')}
                   className={`px-3 py-2 text-sm ${viewMode === 'table' ? 'bg-nesma-primary text-white' : 'text-gray-400 hover:bg-white/5'}`}
                 >
-                  جدول
+                  Table
                 </button>
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`px-3 py-2 text-sm ${viewMode === 'grid' ? 'bg-nesma-primary text-white' : 'text-gray-400 hover:bg-white/5'}`}
                 >
-                  شبكة
+                  Grid
                 </button>
               </div>
             </div>
@@ -216,13 +216,13 @@ export const InventoryDashboard: React.FC = () => {
               <thead className="nesma-table-head text-nesma-secondary text-xs uppercase tracking-wider">
                 <tr>
                   <th className="px-4 py-4">#</th>
-                  <th className="px-4 py-4">المشروع | Project</th>
-                  <th className="px-4 py-4">الكود | Code</th>
-                  <th className="px-4 py-4">الوصف | Description</th>
-                  <th className="px-4 py-4">المقاس | Size</th>
-                  <th className="px-4 py-4">الموقع | Location</th>
-                  <th className="px-4 py-4">الرصيد | Balance</th>
-                  <th className="px-4 py-4">الحالة | Status</th>
+                  <th className="px-4 py-4">Project</th>
+                  <th className="px-4 py-4">Code</th>
+                  <th className="px-4 py-4">Description</th>
+                  <th className="px-4 py-4">Size</th>
+                  <th className="px-4 py-4">Location</th>
+                  <th className="px-4 py-4">Balance</th>
+                  <th className="px-4 py-4">Status</th>
                   <th className="px-4 py-4"></th>
                 </tr>
               </thead>
@@ -302,8 +302,8 @@ export const InventoryDashboard: React.FC = () => {
 
         {/* Footer */}
         <div className="p-4 border-t border-white/10 bg-white/5 flex justify-between items-center text-xs text-gray-400">
-          <span>عرض {filteredData.length} من {INVENTORY_DATA.length} صنف</span>
-          <span>مخزون مستودع الدمام | Dammam Warehouse Inventory</span>
+          <span>Showing {filteredData.length} of {INVENTORY_DATA.length} items</span>
+          <span>Dammam Warehouse Inventory</span>
         </div>
       </div>
 
@@ -312,7 +312,7 @@ export const InventoryDashboard: React.FC = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" onClick={() => setSelectedItem(null)}>
           <div className="glass-card w-full max-w-lg rounded-2xl overflow-hidden border border-white/10 bg-[#0E2841]" onClick={e => e.stopPropagation()}>
             <div className="p-6 border-b border-white/10 bg-white/5 flex justify-between items-center">
-              <h3 className="text-xl font-bold text-white">تفاصيل الصنف | Item Details</h3>
+              <h3 className="text-xl font-bold text-white">Item Details</h3>
               <button onClick={() => setSelectedItem(null)} className="p-2 hover:bg-white/10 rounded-lg">
                 <X size={20} className="text-gray-400" />
               </button>

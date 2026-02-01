@@ -78,16 +78,16 @@ export const ShiftingMaterialDashboard: React.FC = () => {
         <div>
           <h1 className="text-3xl font-bold text-white glow-text flex items-center gap-3">
             <ArrowRightLeft className="text-nesma-secondary" />
-            تحويلات المواد | Shifting Materials
+            Shifting Materials
           </h1>
           <p className="text-sm text-gray-400 mt-1">
-            تتبع تحويلات المواد بين المشاريع والمستودعات
+            Track material transfers between projects and warehouses
           </p>
         </div>
         <div className="flex gap-3">
           <button className="flex items-center gap-2 px-4 py-2 border border-white/20 rounded-lg text-gray-300 hover:bg-white/10 text-sm transition-all">
             <Download size={16} />
-            <span>تصدير | Export</span>
+            <span>Export</span>
           </button>
         </div>
       </div>
@@ -101,7 +101,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{stats.totalTransfers}</p>
-              <p className="text-xs text-gray-400">إجمالي التحويلات</p>
+              <p className="text-xs text-gray-400">Total Transfers</p>
             </div>
           </div>
         </div>
@@ -112,7 +112,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{stats.uniqueMaterials}</p>
-              <p className="text-xs text-gray-400">أصناف مختلفة</p>
+              <p className="text-xs text-gray-400">Unique Items</p>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{stats.uniqueProjects}</p>
-              <p className="text-xs text-gray-400">مشاريع</p>
+              <p className="text-xs text-gray-400">Projects</p>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
             </div>
             <div>
               <p className="text-2xl font-bold text-white">{stats.uniqueWarehouses}</p>
-              <p className="text-xs text-gray-400">مستودعات</p>
+              <p className="text-xs text-gray-400">Warehouses</p>
             </div>
           </div>
         </div>
@@ -149,7 +149,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
               <Search size={18} className="absolute top-1/2 -translate-y-1/2 left-3 text-gray-400" />
               <input
                 type="text"
-                placeholder="بحث بالمادة أو الطالب... | Search material or requester..."
+                placeholder="Search material or requester..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full bg-black/20 border border-white/10 rounded-lg pl-10 pr-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-nesma-secondary/50"
@@ -163,7 +163,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
                 onChange={(e) => setFilterSendProject(e.target.value)}
                 className="bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-gray-300 focus:outline-none focus:border-nesma-secondary/50"
               >
-                <option value="">من مشروع | From Project</option>
+                <option value="">From Project</option>
                 {sendProjects.map(p => <option key={p} value={p}>{p}</option>)}
               </select>
 
@@ -172,7 +172,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
                 onChange={(e) => setFilterRequestProject(e.target.value)}
                 className="bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-gray-300 focus:outline-none focus:border-nesma-secondary/50"
               >
-                <option value="">إلى مشروع | To Project</option>
+                <option value="">To Project</option>
                 {requestProjects.map(p => <option key={p} value={p}>{p}</option>)}
               </select>
 
@@ -181,7 +181,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
                 onChange={(e) => setFilterIssuedBy(e.target.value)}
                 className="bg-black/20 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-gray-300 focus:outline-none focus:border-nesma-secondary/50"
               >
-                <option value="">المستودع | Warehouse</option>
+                <option value="">Warehouse</option>
                 {issuedByList.map(w => <option key={w} value={w}>{w}</option>)}
               </select>
 
@@ -191,7 +191,7 @@ export const ShiftingMaterialDashboard: React.FC = () => {
                   className="flex items-center gap-1 px-3 py-2 text-red-400 hover:text-red-300 text-sm"
                 >
                   <X size={14} />
-                  مسح الفلاتر
+                  Clear Filters
                 </button>
               )}
 
@@ -201,13 +201,13 @@ export const ShiftingMaterialDashboard: React.FC = () => {
                   onClick={() => setViewMode('table')}
                   className={`px-3 py-2 text-sm ${viewMode === 'table' ? 'bg-nesma-primary text-white' : 'text-gray-400 hover:bg-white/5'}`}
                 >
-                  جدول
+                  Table
                 </button>
                 <button
                   onClick={() => setViewMode('cards')}
                   className={`px-3 py-2 text-sm ${viewMode === 'cards' ? 'bg-nesma-primary text-white' : 'text-gray-400 hover:bg-white/5'}`}
                 >
-                  بطاقات
+                  Cards
                 </button>
               </div>
             </div>
@@ -220,13 +220,13 @@ export const ShiftingMaterialDashboard: React.FC = () => {
             <table className="w-full text-left border-collapse">
               <thead className="nesma-table-head text-nesma-secondary text-xs uppercase tracking-wider">
                 <tr>
-                  <th className="px-6 py-4">المادة | Material</th>
-                  <th className="px-6 py-4">الكمية | Qty</th>
-                  <th className="px-6 py-4">التاريخ | Date</th>
-                  <th className="px-6 py-4">من | From</th>
-                  <th className="px-6 py-4">إلى | To</th>
-                  <th className="px-6 py-4">الطالب | Requester</th>
-                  <th className="px-6 py-4">المستودع | Warehouse</th>
+                  <th className="px-6 py-4">Material</th>
+                  <th className="px-6 py-4">Qty</th>
+                  <th className="px-6 py-4">Date</th>
+                  <th className="px-6 py-4">From</th>
+                  <th className="px-6 py-4">To</th>
+                  <th className="px-6 py-4">Requester</th>
+                  <th className="px-6 py-4">Warehouse</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5 text-sm text-gray-300">
@@ -279,8 +279,8 @@ export const ShiftingMaterialDashboard: React.FC = () => {
 
         {/* Footer */}
         <div className="p-4 border-t border-white/10 bg-white/5 flex justify-between items-center text-xs text-gray-400">
-          <span>عرض {filteredData.length} من {SHIFTING_MATERIALS_DATA.length} سجل</span>
-          <span>تحويلات المواد | Shifting Materials Report</span>
+          <span>Showing {filteredData.length} of {SHIFTING_MATERIALS_DATA.length} records</span>
+          <span>Shifting Materials Report</span>
         </div>
       </div>
     </div>
