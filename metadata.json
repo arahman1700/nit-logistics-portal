@@ -1,0 +1,5 @@
+{
+  "name": "NIT Logistics Portal",
+  "description": "A comprehensive logistics management system for NIT, featuring role-based dashboards for Admins, Warehouse Staff, Transport Teams, and Engineers with RTL Arabic support.",
+  "requestFramePermissions": []
+}
