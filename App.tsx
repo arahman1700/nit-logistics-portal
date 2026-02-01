@@ -14,6 +14,9 @@ import { PaymentsDashboard } from './pages/PaymentsDashboard';
 import { RfimList } from './pages/quality/RfimList';
 import { JobOrdersKanban } from './pages/transport/JobOrdersKanban';
 import { MapDashboard } from './pages/MapDashboard';
+import { ShiftingMaterialDashboard } from './pages/warehouse/ShiftingMaterialDashboard';
+import { InventoryDashboard } from './pages/warehouse/InventoryDashboard';
+import { NonMovingMaterialsDashboard } from './pages/warehouse/NonMovingMaterialsDashboard';
 import { UserRole } from './types';
 import { MOCK_USERS } from './constants';
 
@@ -102,6 +105,9 @@ const App: React.FC = () => {
           <Route path="/admin/map" element={<MapDashboard />} />
           <Route path="/admin/quality/rfim" element={<RfimList />} />
           <Route path="/admin/transport/board" element={<JobOrdersKanban />} />
+          <Route path="/admin/warehouse/shifting-materials" element={<ShiftingMaterialDashboard />} />
+          <Route path="/admin/warehouse/inventory-dashboard" element={<InventoryDashboard />} />
+          <Route path="/admin/warehouse/non-moving" element={<NonMovingMaterialsDashboard />} />
           <Route path="/admin/:section/:resource" element={<AdminResourceList />} />
           <Route path="/admin/forms/:formType" element={<ResourceForm />} />
           

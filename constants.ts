@@ -561,6 +561,10 @@ export const NAVIGATION_LINKS: Record<UserRole, NavItem[]> = {
         { label: 'Return Vouchers (MRV)', path: '/admin/warehouse/mrv', icon: RefreshCw },
         { label: '─────────────', type: 'divider', icon: Box },
         { label: 'Inventory Levels', path: '/admin/warehouse/inventory', icon: Box },
+        { label: 'Inventory Dashboard', path: '/admin/warehouse/inventory-dashboard', icon: BarChart3 },
+        { label: 'Shifting Materials', path: '/admin/warehouse/shifting-materials', icon: RefreshCw },
+        { label: 'Non-Moving Materials', path: '/admin/warehouse/non-moving', icon: AlertTriangle },
+        { label: '─────────────', type: 'divider', icon: Box },
         { label: 'Gate Passes', path: '/admin/warehouse/gate-pass', icon: LogOut },
         { label: 'Stock Transfers', path: '/admin/warehouse/stock-transfer', icon: RefreshCw },
       ]
