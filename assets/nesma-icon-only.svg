@@ -1,0 +1,14 @@
+<svg viewBox="0 0 68.35 30.65" xmlns="http://www.w3.org/2000/svg">
+  <!-- T - Right vertical bar -->
+  <rect fill="#FFFFFF" x="46.4" y=".04" width="10.53" height="30.52"/>
+  <!-- N - Left vertical bar -->
+  <rect fill="#FFFFFF" x="0" y=".02" width="10.52" height="30.56"/>
+  <!-- N - Diagonal shape -->
+  <path fill="#FFFFFF" d="M30.89,16.55v13.93s0,.02,0,0L13.01,13.47s0,0,0,0V.06s0-.02,0,0l17.88,16.49s0,0,0,0"/>
+  <!-- I - Vertical bar -->
+  <rect fill="#FFFFFF" x="33.38" y="10.69" width="10.53" height="19.87"/>
+  <!-- I - Cyan triangle -->
+  <polygon fill="#80D1E9" points="33.38 8.75 33.38 .02 43.91 .02 33.38 8.75"/>
+  <!-- T - Horizontal extension -->
+  <rect fill="#FFFFFF" x="58.95" y="11.2" width="9.4" height="7.32"/>
+</svg>
