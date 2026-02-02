@@ -1,0 +1,216 @@
+/* ================================================
+   NESMA INFRASTRUCTURE - SOFTR CUSTOM CSS
+   Copy this to: Softr > Design > Custom Code > CSS
+   ================================================ */
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --nesma-primary: #2E3192;
+  --nesma-secondary: #80D1E9;
+  --nesma-dark: #0E2841;
+  --nesma-bg: #051020;
+  --nesma-accent: #203366;
+  --nesma-success: #10B981;
+  --nesma-warning: #F59E0B;
+  --nesma-danger: #EF4444;
+}
+
+/* ===== DARK THEME BACKGROUND ===== */
+body, .sw-background {
+  background: linear-gradient(135deg, #051020 0%, #0E2841 50%, #051020 100%) !important;
+  color: #ffffff !important;
+}
+
+/* ===== HEADER/NAVBAR ===== */
+.sw-navbar, header {
+  background: rgba(5, 16, 32, 0.9) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ===== CARDS - GLASSMORPHISM ===== */
+.sw-card, .card, [class*="card"] {
+  background: rgba(255, 255, 255, 0.02) !important;
+  backdrop-filter: blur(25px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+  border-radius: 16px !important;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+.sw-card:hover, .card:hover {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(128, 209, 233, 0.2) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ===== BUTTONS ===== */
+.sw-btn-primary, .btn-primary, [class*="btn-primary"] {
+  background: linear-gradient(135deg, #2E3192 0%, #203366 100%) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 15px rgba(46, 49, 146, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+.sw-btn-primary:hover, .btn-primary:hover {
+  background: linear-gradient(135deg, #3a3db8 0%, #2a4080 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(46, 49, 146, 0.5) !important;
+}
+
+/* Secondary Button - Cyan */
+.sw-btn-secondary, .btn-secondary {
+  background: transparent !important;
+  border: 1px solid #80D1E9 !important;
+  color: #80D1E9 !important;
+  border-radius: 12px !important;
+}
+
+.sw-btn-secondary:hover, .btn-secondary:hover {
+  background: rgba(128, 209, 233, 0.1) !important;
+}
+
+/* ===== SIDEBAR ===== */
+.sw-sidebar, .sidebar, nav[class*="sidebar"] {
+  background: rgba(5, 16, 32, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* ===== TABLES ===== */
+.sw-table, table {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.sw-table thead, table thead {
+  background: rgba(46, 49, 146, 0.3) !important;
+}
+
+.sw-table th, table th {
+  color: #80D1E9 !important;
+  font-weight: 600 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.sw-table td, table td {
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.sw-table tr:hover, table tr:hover {
+  background: rgba(128, 209, 233, 0.05) !important;
+}
+
+/* ===== FORM INPUTS ===== */
+input, select, textarea, .sw-input {
+  background-color: rgba(0, 0, 0, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+input:focus, select:focus, textarea:focus, .sw-input:focus {
+  border-color: #80D1E9 !important;
+  background-color: rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0 0 3px rgba(128, 209, 233, 0.15) !important;
+  outline: none !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ===== STATUS BADGES ===== */
+.badge-success, [class*="success"] {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #10B981 !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+.badge-warning, [class*="warning"] {
+  background: rgba(245, 158, 11, 0.2) !important;
+  color: #F59E0B !important;
+  border: 1px solid rgba(245, 158, 11, 0.3) !important;
+}
+
+.badge-danger, [class*="danger"], [class*="error"] {
+  background: rgba(239, 68, 68, 0.2) !important;
+  color: #EF4444 !important;
+  border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(128, 209, 233, 0.2);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(128, 209, 233, 0.5);
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #80D1E9 !important;
+  transition: color 0.3s ease !important;
+}
+
+a:hover {
+  color: #FFFFFF !important;
+}
+
+/* ===== HEADINGS ===== */
+h1, h2, h3, h4, h5, h6 {
+  color: #FFFFFF !important;
+}
+
+/* ===== TEXT GLOW EFFECT ===== */
+.glow-text {
+  text-shadow: 0 0 30px rgba(128, 209, 233, 0.3);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ===== MODAL/POPUP ===== */
+.sw-modal, .modal, [class*="modal"] {
+  background: rgba(14, 40, 65, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 20px !important;
+}
+
+/* ===== DROPDOWN ===== */
+.sw-dropdown, .dropdown-menu, [class*="dropdown"] {
+  background: rgba(14, 40, 65, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+}
+
+/* ===== FOOTER ===== */
+footer, .sw-footer {
+  background: rgba(5, 16, 32, 0.9) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
